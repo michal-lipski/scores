@@ -11,7 +11,7 @@
      <th>GAME</th>
       <th>WINNER</th>
       <th>LOOSER</th>
-      <th></th>
+      <th>date</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +20,7 @@
      <td>{{scores.length - $index }}</td>
       <td>{{score.winner}}</td>
       <td>{{score.looser}}</td>
+     <td>{{score.played | date:'MM/dd/yyyy @ h:mma'}}</td>
     </tr>
   </tbody> 
 </table>
