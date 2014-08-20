@@ -24,7 +24,15 @@ var app = angular.module('plunker', ['ngRoute', 'mongolabResourceHttp'], functio
   
   .controller('ScoresListCtrl', function($scope, $location, scores) {
     
-    $scope.scores = scores;
+     $scope.scores = scores;
+    
+    $scope.winners = _.indexBy(scores, 'winner');
+    
+    $scope.wins=_.countBy(scores, function(score) {
+       return score.winner;
+  });
+    
+   $scope.tops=_.map($scope.winners, function(winner){ return {won:$scope.wins[winner.winner],winner:winner.winner} }); 
   })
 
   .controller('ScoresFormCtrl', function($scope, $location, score) {

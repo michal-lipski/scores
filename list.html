@@ -1,14 +1,21 @@
-<h3>Scores</h3>
+<h3>Winners</h3>
+<li ng-repeat="top in tops | orderBy: top.won">
+      <ul>{{top.won}} {{top.winner}}</ul>
+    </li>
+
+
+<h3>Games</h3>
 <table class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
-      <th>Game NO</th>
+     <th>GAME</th>
       <th>WINNER</th>
       <th>LOOSER</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
+   
     <tr ng-repeat="score in scores">
       <td>{{score.number}}</td>
       <td>{{score.winner}}</td>
